@@ -81,7 +81,7 @@ const HeaderLayout: FC<Props> = ({
         <Container color="#262626">
           <form onSubmit={handleSubmit(onSubmit)}>
             <Flex align="center" justify="space-between" pt="18px" pb="18px">
-              <Link w="88px" as={ReactLink} to={ROUTES.HOME}>
+              <Link w="88px" as={ReactLink} to={`${ROUTES.HOME}`}>
                 <Image
                   objectFit="cover"
                   src={HeaderLogo}
@@ -228,7 +228,7 @@ const HeaderLayout: FC<Props> = ({
                     transform: "translateY(-50%)",
                   }}
                 >
-                  <Link as={ReactLink} to={ROUTES.CART} ml={{ md: "20px" }}>
+                  <Link as={ReactLink} to={`/${ROUTES.CART}`} ml={{ md: "20px" }}>
                     <Button variant="ghost" colorScheme="blue">
                       <Badge
                         count={totalProductInCart}
