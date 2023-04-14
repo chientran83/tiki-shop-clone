@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 import useSideBar, { Props, ReceivedProps } from "./hook";
 import { THEME } from "../../../libraries/styled-component";
 import { Styles } from "./styled";
+import { ROUTES } from "../../../constants/routes";
 
 const SideBarLayout: FC<Props> = ({ user }) => {
   return (
@@ -28,7 +29,7 @@ const SideBarLayout: FC<Props> = ({ user }) => {
         </Flex>
         <Flex flexDirection="column">
           <NavLink
-            to="user"
+            to={ROUTES.USER_INFO}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             <Button
@@ -43,7 +44,7 @@ const SideBarLayout: FC<Props> = ({ user }) => {
             </Button>
           </NavLink>
           <NavLink
-            to="favorite"
+            to={ROUTES.FAVORITE}
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             <Button

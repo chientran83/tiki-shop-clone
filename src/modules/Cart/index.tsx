@@ -30,6 +30,7 @@ import Spinner from "../../components/Spinner";
 import { THEME } from "../../libraries/styled-component";
 import ModalConfirm from "../../components/ModalConfirm";
 import LogoNothing from "../../assets/images/logo-nothing.png";
+import { ROUTES } from "../../constants/routes";
 
 const CartLayout: FC<Props> = ({
   loading,
@@ -76,7 +77,7 @@ const CartLayout: FC<Props> = ({
                     {productInCart.map((product, index) => (
                       <Tr key={index}>
                         <Td>
-                          <Link as={ReactLink} to={`/product-detail/${product.id}`} style={{textDecoration : "none"}}>
+                          <Link as={ReactLink} to={`/${ROUTES.PRODUCT_DETAIL}/${product.id}`} style={{textDecoration : "none"}}>
                             <Flex w="300px" justify="flex-start" gap={2}>
                               <Image
                                 objectFit="cover"
@@ -138,7 +139,7 @@ const CartLayout: FC<Props> = ({
               <VStack gap={2} p="50px 0">
                 <Image objectFit="cover" src={LogoNothing} maxW="90%" />
                 <Text>Không có sản phẩm nào.</Text>
-                <Link as={ReactLink} style={{ textDecoration: "none" }} to="/">
+                <Link as={ReactLink} style={{ textDecoration: "none" }} to={ROUTES.HOME}>
                   <Button colorScheme="yellow">Tiếp tục mua sắm</Button>
                 </Link>
               </VStack>

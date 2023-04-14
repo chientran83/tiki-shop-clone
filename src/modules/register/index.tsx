@@ -30,6 +30,7 @@ import { FC } from "react";
 import { Link as ReactLink } from "react-router-dom";
 
 import LogoLogin from "../../assets/images/logo-login1.png";
+import { ROUTES } from "../../constants/routes";
 import { THEME } from "../../libraries/styled-component";
 import useRegister, { Props, ReceivedProps } from "./hook";
 
@@ -180,7 +181,7 @@ const RegisterLayout: FC<Props> = ({
                 ml="5px"
                 color={THEME.primary.main}
                 as={ReactLink}
-                to="/login"
+                to={`/${ROUTES.LOGIN}`}
               >
                 Đăng nhập
               </Link>

@@ -9,6 +9,7 @@ import { productInCartSelector } from "../../context/cart/selector";
 import { SearchOptions } from "./types";
 import { getSearchProduct } from "../../context/product/services";
 import { useDebounce } from "../../utilities/hooks";
+import { ROUTES } from "../../constants/routes";
 
 export type ReceivedProps = Record<string, any>;
 
@@ -63,7 +64,7 @@ const useHeader = (props: ReceivedProps) => {
 
   const onSubmit = (data: any) => {
     navigate({
-      pathname: "/search",
+      pathname: ROUTES.SEARCH,
       search: `?${createSearchParams({
         keyword: data.keyword,
       })}`,

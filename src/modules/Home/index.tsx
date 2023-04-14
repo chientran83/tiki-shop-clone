@@ -17,6 +17,7 @@ import Banner from "../../assets/images/banner.png";
 import Spinner from "../../components/Spinner";
 import { StyleLink } from "./styled";
 import ProductItem from "../../components/ProductItem";
+import { ROUTES } from "../../constants/routes";
 
 const HomeLayout: FC<Props> = ({
   products,
@@ -93,7 +94,7 @@ const HomeLayout: FC<Props> = ({
               datas={popularProducts.map((product, index: number) => (
                 <StyleLink
                   as={ReactLink}
-                  to={`product-detail/${product.id}`}
+                  to={`${ROUTES.PRODUCT_DETAIL}/${product.id}`}
                   key={index}
                 >
                   <Image

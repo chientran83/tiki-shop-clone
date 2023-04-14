@@ -27,6 +27,7 @@ import Spinner from "../../components/Spinner";
 import Slider from "../../components/Slider";
 import { Styles } from "./styled";
 import { StyleLink } from "../Home/styled";
+import { ROUTES } from "../../constants/routes";
 
 const ProductDetailLayout: FC<Props> = ({
   contextHolder,
@@ -254,7 +255,7 @@ const ProductDetailLayout: FC<Props> = ({
                 datas={popularProducts.map((product, index: number) => (
                   <StyleLink
                     as={ReactLink}
-                    to={`/product-detail/${product.id}`}
+                    to={`/${ROUTES.PRODUCT_DETAIL}/${product.id}`}
                     key={index}
                   >
                     <Image

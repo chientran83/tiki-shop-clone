@@ -22,6 +22,7 @@ import UserInfo from "../modules/UserInfo";
 import Favorite from "../modules/Favorite";
 import favoriteSlice from "../context/Favorite/slice";
 import NotFound from "../modules/NotFound";
+import { ROUTES } from "../constants/routes";
 
 const AppRoutes = () => {
   const dispatch = useAppDispatch();
@@ -56,7 +57,7 @@ const AppRoutes = () => {
       element: <NotFound />,
     },
     {
-      path: "",
+      path: ROUTES.ROOT,
       element: (
         <ProtectedRoutes conditions={loggedInUser} redirect="/login">
           <DefaultLayout />
@@ -68,33 +69,33 @@ const AppRoutes = () => {
           element: <DefaultLayout />,
           children: [
             {
-              path: "",
+              path: ROUTES.HOME,
               element: <Home />,
             },
             {
-              path: "cart",
+              path: ROUTES.CART,
               element: <Cart />,
             },
             {
-              path: "product-detail/:productId",
+              path: `${ROUTES.PRODUCT_DETAIL}/:productId`,
               element: <ProductDetail />,
             },
             {
-              path: "search",
+              path: ROUTES.SEARCH,
               element: <Search />,
             },
           ],
         },
         {
-          path: "account",
+          path: ROUTES.ACCOUNT,
           element: <AccountLayout />,
           children: [
             {
-              path: "user",
+              path: ROUTES.USER_INFO,
               element: <UserInfo />,
             },
             {
-              path: "favorite",
+              path: ROUTES.FAVORITE,
               element: <Favorite />,
             },
           ],
@@ -102,7 +103,7 @@ const AppRoutes = () => {
       ],
     },
     {
-      path: "",
+      path: ROUTES.ROOT,
       element: (
         <ProtectedRoutes conditions={!loggedInUser} redirect="/">
           <LoginLayout />
@@ -110,11 +111,11 @@ const AppRoutes = () => {
       ),
       children: [
         {
-          path: "login",
+          path: ROUTES.LOGIN,
           element: <Login />,
         },
         {
-          path: "register",
+          path: ROUTES.REGISTER,
           element: <Register />,
         },
       ],

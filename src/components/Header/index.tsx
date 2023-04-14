@@ -30,6 +30,7 @@ import FreeShip from "../../assets/images/free-ship.png";
 import useHeader, { ReceivedProps, Props } from "./hook";
 import { THEME } from "../../libraries/styled-component";
 import { Styles } from "./styled";
+import { ROUTES } from "../../constants/routes";
 
 const HeaderLayout: FC<Props> = ({
   totalProductInCart,
@@ -80,7 +81,7 @@ const HeaderLayout: FC<Props> = ({
         <Container color="#262626">
           <form onSubmit={handleSubmit(onSubmit)}>
             <Flex align="center" justify="space-between" pt="18px" pb="18px">
-              <Link w="88px" as={ReactLink} to="/">
+              <Link w="88px" as={ReactLink} to={ROUTES.HOME}>
                 <Image
                   objectFit="cover"
                   src={HeaderLogo}
@@ -134,7 +135,7 @@ const HeaderLayout: FC<Props> = ({
                         variant="ghost"
                         leftIcon={<HomeOutlined style={{ fontSize: "24px" }} />}
                         colorScheme="blue"
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate(ROUTES.HOME)}
                       >
                         Trang chủ
                       </MenuItem>
@@ -168,7 +169,7 @@ const HeaderLayout: FC<Props> = ({
                     variant="ghost"
                     leftIcon={<HomeOutlined style={{ fontSize: "24px" }} />}
                     colorScheme="blue"
-                    onClick={() => navigate("/")}
+                    onClick={() => navigate(ROUTES.HOME)}
                   >
                     Trang chủ
                   </Button>
@@ -206,7 +207,7 @@ const HeaderLayout: FC<Props> = ({
                           position: "absolute",
                         }}
                       >
-                        <MenuItem onClick={() => navigate("/account/user")}>
+                        <MenuItem onClick={() => navigate(`/${ROUTES.ACCOUNT}/${ROUTES.USER_INFO}`)}>
                           Thông tin tài khoản
                         </MenuItem>
                         <MenuItem onClick={() => logout()}>Đăng xuất</MenuItem>
@@ -227,7 +228,7 @@ const HeaderLayout: FC<Props> = ({
                     transform: "translateY(-50%)",
                   }}
                 >
-                  <Link as={ReactLink} to="/cart" ml={{ md: "20px" }}>
+                  <Link as={ReactLink} to={ROUTES.CART} ml={{ md: "20px" }}>
                     <Button variant="ghost" colorScheme="blue">
                       <Badge
                         count={totalProductInCart}

@@ -14,6 +14,7 @@ import { Link as ReactLink } from "react-router-dom";
 import Official from "../../assets/images/official.png";
 import { StyleLink } from "../../modules/Home/styled";
 import useProductItem, { Props, ReceivedProps } from "./hook";
+import { ROUTES } from "../../constants/routes";
 
 const ProductItemLayout: FC<Props> = ({
   product,
@@ -28,7 +29,7 @@ const ProductItemLayout: FC<Props> = ({
       _hover={{ boxShadow: "0px 0px 8px #bdb7b7" }}
     >
       {contextHolder}
-      <StyleLink as={ReactLink} to={`/product-detail/${product.id}`}>
+      <StyleLink as={ReactLink} to={`/${ROUTES.PRODUCT_DETAIL}/${product.id}`}>
         <Image objectFit="cover" src={product.image} w="100%" />
         {product.official && (
           <Image
