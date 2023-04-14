@@ -119,7 +119,11 @@ const FavoriteLayout: FC<Props> = ({
             <VStack gap={2} p="50px 0">
               <Image objectFit="cover" src={LogoNothing} maxW="90%" />
               <Text>Không có sản phẩm nào.</Text>
-              <Link as={ReactLink} style={{ textDecoration: "none" }} to={ROUTES.HOME}>
+              <Link
+                as={ReactLink}
+                style={{ textDecoration: "none" }}
+                to={ROUTES.HOME}
+              >
                 <Button colorScheme="yellow">Tiếp tục mua sắm</Button>
               </Link>
             </VStack>
