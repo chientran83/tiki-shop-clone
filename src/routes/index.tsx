@@ -58,11 +58,7 @@ const AppRoutes = () => {
     },
     {
       path: ROUTES.ROOT,
-      element: (
-        <ProtectedRoutes conditions={loggedInUser} redirect="/login">
-          <DefaultLayout />
-        </ProtectedRoutes>
-      ),
+      element: <ProtectedRoutes conditions={loggedInUser} redirect="/login" />,
       children: [
         {
           path: "",
@@ -104,19 +100,21 @@ const AppRoutes = () => {
     },
     {
       path: ROUTES.ROOT,
-      element: (
-        <ProtectedRoutes conditions={!loggedInUser} redirect="/">
-          <LoginLayout />
-        </ProtectedRoutes>
-      ),
+      element: <ProtectedRoutes conditions={!loggedInUser} redirect="/" />,
       children: [
         {
-          path: ROUTES.LOGIN,
-          element: <Login />,
-        },
-        {
-          path: ROUTES.REGISTER,
-          element: <Register />,
+          path: "",
+          element: <LoginLayout />,
+          children: [
+            {
+              path: ROUTES.LOGIN,
+              element: <Login />,
+            },
+            {
+              path: ROUTES.REGISTER,
+              element: <Register />,
+            },
+          ],
         },
       ],
     },
