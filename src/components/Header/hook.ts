@@ -50,6 +50,7 @@ const useHeader = (props: ReceivedProps) => {
 
   const onChangeSearchInput = (value: string) => {
     if (value) {
+      setValue("keyword", value);
       const optionAvailable = searchOptions.find((option) => {
         return value === option.value;
       });
@@ -59,7 +60,6 @@ const useHeader = (props: ReceivedProps) => {
       }
       setKeywordSearch(value);
     }
-    setValue("keyword", value);
   };
 
   const onSubmit = (data: any) => {
