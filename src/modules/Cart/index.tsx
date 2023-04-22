@@ -151,10 +151,10 @@ const CartLayout: FC<Props> = ({
           <Card>
             <CardHeader>
               <Flex justify="space-between">
-                <Text color={THEME.secondary.main} fontSize="23px">
+                <Text color={THEME.secondary.main} fontSize="21px">
                   Giao tới
                 </Text>
-                <Link color={THEME.primary.main} fontSize="19px">
+                <Link color={THEME.primary.main} fontSize="16px">
                   Thay đổi
                 </Link>
               </Flex>
@@ -192,25 +192,25 @@ const CartLayout: FC<Props> = ({
               <Stack divider={<StackDivider />} spacing="4">
                 <Box w="100%">
                   <Flex justify="space-between">
-                    <Text fontSize="23px" color={THEME.secondary.main}>
+                    <Text fontSize="21px" color={THEME.secondary.main}>
                       Tạm tính
                     </Text>
-                    <Text fontSize="23px">{totalPrice} đ</Text>
+                    <Text fontSize="21px">{totalPrice} đ</Text>
                   </Flex>
                   <Flex justify="space-between">
-                    <Text fontSize="23px" color={THEME.secondary.main}>
+                    <Text fontSize="21px" color={THEME.secondary.main}>
                       Giảm giá
                     </Text>
-                    <Text fontSize="23px">0đ</Text>
+                    <Text fontSize="21px">0đ</Text>
                   </Flex>
                 </Box>
                 <Box w="100%">
                   <Flex justify="space-between">
-                    <Text fontSize="23px" color={THEME.secondary.main}>
+                    <Text fontSize="21px" color={THEME.secondary.main}>
                       Tổng tiền
                     </Text>
                     <Flex direction="column" align="flex-end">
-                      <Text fontSize="33px" color="red" fontWeight="400">
+                      <Text fontSize="28px" color="red" fontWeight="400">
                         {totalPrice} ₫
                       </Text>
                       <Text fontSize="19px" color={THEME.secondary.main}>

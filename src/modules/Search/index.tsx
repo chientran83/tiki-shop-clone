@@ -21,7 +21,7 @@ const SearchLayout: FC<Props> = ({ querySearch, loading, products }) => {
   return (
     <Box bg="white" p="16px">
       <Stack divider={<StackDivider />} spacing="4">
-        <Text fontSize="32px">Kết quả tìm kiếm cho `{querySearch}`</Text>
+        <Text fontSize="28px">Kết quả tìm kiếm cho `{querySearch}`</Text>
         <Spinner loading={loading}>
           <Card>
             <CardHeader>

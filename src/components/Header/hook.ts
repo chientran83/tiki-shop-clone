@@ -64,7 +64,7 @@ const useHeader = (props: ReceivedProps) => {
 
   const onSubmit = (data: any) => {
     navigate({
-      pathname: ROUTES.SEARCH,
+      pathname: `/${ROUTES.SEARCH}`,
       search: `?${createSearchParams({
         keyword: data.keyword,
       })}`,
