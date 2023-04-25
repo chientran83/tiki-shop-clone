@@ -2,6 +2,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "../../app/store";
+import { userSelector } from "../../context/auth/selector";
 import { productInCartSelector } from "../../context/cart/selector";
 import cartSlice from "../../context/cart/slice";
 import { ProductInCart } from "./types";
@@ -12,6 +13,7 @@ const useCart = (props: ReceivedProps) => {
   const dispatch = useAppDispatch();
   const cancelRef = useRef();
   const productInCart = useSelector(productInCartSelector);
+  const user = useSelector(userSelector);
   const [loading, setLoading] = useState<boolean>(false);
   const [productDelete, setProductDelete] = useState<ProductInCart | null>(
     null
@@ -89,6 +91,7 @@ const useCart = (props: ReceivedProps) => {
     productDelete,
     setProductDelete,
     totalPrice,
+    user,
   };
 };
 

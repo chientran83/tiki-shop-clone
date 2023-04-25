@@ -19,6 +19,7 @@ export const getAuth = async () => {
         avatar: "https://reqres.in/img/faces/2-image.jpg",
         name: "Chien Tran",
         gender: "male",
+        phoneNumber: "0368258081",
         address: "Phuong Nam - Uong Bi - Quang Ninh",
       },
     });

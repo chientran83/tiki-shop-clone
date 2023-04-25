@@ -44,6 +44,7 @@ const CartLayout: FC<Props> = ({
   productDelete,
   setProductDelete,
   totalPrice,
+  user,
 }) => {
   return (
     <>
@@ -77,7 +78,11 @@ const CartLayout: FC<Props> = ({
                     {productInCart.map((product, index) => (
                       <Tr key={index}>
                         <Td>
-                          <Link as={ReactLink} to={`/${ROUTES.PRODUCT_DETAIL}/${product.id}`} style={{textDecoration : "none"}}>
+                          <Link
+                            as={ReactLink}
+                            to={`/${ROUTES.PRODUCT_DETAIL}/${product.id}`}
+                            style={{ textDecoration: "none" }}
+                          >
                             <Flex w="300px" justify="flex-start" gap={2}>
                               <Image
                                 objectFit="cover"
@@ -139,7 +144,11 @@ const CartLayout: FC<Props> = ({
               <VStack gap={2} p="50px 0">
                 <Image objectFit="cover" src={LogoNothing} maxW="90%" />
                 <Text>Không có sản phẩm nào.</Text>
-                <Link as={ReactLink} style={{ textDecoration: "none" }} to={ROUTES.HOME}>
+                <Link
+                  as={ReactLink}
+                  style={{ textDecoration: "none" }}
+                  to={ROUTES.HOME}
+                >
                   <Button colorScheme="yellow">Tiếp tục mua sắm</Button>
                 </Link>
               </VStack>
@@ -154,7 +163,12 @@ const CartLayout: FC<Props> = ({
                 <Text color={THEME.secondary.main} fontSize="21px">
                   Giao tới
                 </Text>
-                <Link color={THEME.primary.main} fontSize="16px">
+                <Link
+                  as={ReactLink}
+                  to={`/account/${ROUTES.USER_INFO}`}
+                  color={THEME.primary.main}
+                  fontSize="16px"
+                >
                   Thay đổi
                 </Link>
               </Flex>
@@ -162,7 +176,7 @@ const CartLayout: FC<Props> = ({
             <CardBody>
               <Flex>
                 <Text fontSize="19px" pr="15px">
-                  Trần Văn Chiến
+                  {user?.name}
                 </Text>
                 <Text
                   fontSize="19px"
@@ -179,11 +193,11 @@ const CartLayout: FC<Props> = ({
                     transform: "translateY(-50%)",
                   }}
                 >
-                  0368258081
+                  {user?.phoneNumber}
                 </Text>
               </Flex>
               <Text fontSize="19px" pr="15px" color={THEME.secondary.main}>
-                Phường Mỹ Đình 2, Quận Nam Từ Liêm, Hà Nội
+              {user?.address}
               </Text>
             </CardBody>
           </Card>

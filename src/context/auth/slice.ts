@@ -35,6 +35,7 @@ const authSlice = createSlice({
         name: "Chien Tran",
         dateOfBirt: "08/03/2001",
         gender: "nam",
+        phoneNumber: "0368258081",
         address: "Phuong Nam - Uong Bi - Quang Ninh",
       };
     });
