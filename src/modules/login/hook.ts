@@ -48,12 +48,12 @@ const useLogin = (props: ReceivedProps) => {
           localStorage.setItem("token", res.data.token);
           dispatch(
             authSlice.actions.login({
-              id: "2",
+              id: "4",
               email: "janet.weaver@reqres.in",
               avatar: "https://reqres.in/img/faces/2-image.jpg",
               name: "Chien Tran",
-              dateOfBirt: "08/03/2001",
-              gender: "nam",
+              gender: "male",
+              phoneNumber: "0368258081",
               address: "Phuong Nam - Uong Bi - Quang Ninh",
             })
           );
