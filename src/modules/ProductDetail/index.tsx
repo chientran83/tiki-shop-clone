@@ -87,7 +87,7 @@ const ProductDetailLayout: FC<Props> = ({
                         }}
                       >
                         <Flex w="100%" m="0" p="0 15px">
-                          {dots}{" "}
+                          {dots}
                         </Flex>
                       </div>
                     )}
@@ -146,10 +146,10 @@ const ProductDetailLayout: FC<Props> = ({
                 <Text>Giao đến: </Text>
                 <Text fontWeight={600} mr="3px">
                   Q. Nam Từ Liêm, P. Mỹ Đình 2, Hà Nội
-                </Text>{" "}
+                </Text>
                 -
-                <Link color={THEME.primary.main} ml="3px">
-                  Đổi địa chỉ{" "}
+                <Link as={ReactLink} color={THEME.primary.main} ml="3px" to={`/account/${ROUTES.USER_INFO}`}>
+                  Đổi địa chỉ
                 </Link>
               </Flex>
               <Flex m="16px 0px" wrap="wrap">
